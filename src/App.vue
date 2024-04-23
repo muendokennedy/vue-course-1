@@ -3,12 +3,14 @@
 // import TheWelcome from './components/TheWelcome.vue'
 import Header from './components/Header.vue'
 import Tasks from './components/Tasks.vue'
+import AddTask from './components/AddTask.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Tasks
+    Tasks,
+    AddTask
   },
   data() {
     return {
@@ -56,6 +58,7 @@ export default {
 <template>
     <div class="container">
       <Header title="Task App"/>
+      <AddTask/>
       <Tasks v-on:delete-task="deleteTask" v-on:toggle-reminder="toggleReminder" v-bind:tasks="tasks"/>
     </div>
 </template>
