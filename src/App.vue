@@ -36,6 +36,18 @@ export default {
         reminder: false
       }
     ]
+  },
+  methods: {
+    deleteTask(id){
+      this.tasks = this.tasks.filter((task) => (
+        task.id !== id
+      ))
+    },
+    toggleReminder(id){
+      this.tasks = this.tasks.map((task) => (
+        task.id === id ? {...task, reminder: !task.reminder } : task
+      ))
+    }
   }
 }
 
@@ -43,8 +55,8 @@ export default {
 
 <template>
     <div class="container">
-      <Header title="Hello Kennedy"/>
-      <Tasks v-bind:tasks="tasks"/>
+      <Header title="Task App"/>
+      <Tasks v-on:delete-task="deleteTask" v-on:toggle-reminder="toggleReminder" v-bind:tasks="tasks"/>
     </div>
 </template>
 
