@@ -14,7 +14,8 @@ export default {
   },
   data() {
     return {
-      tasks: []
+      tasks: [],
+      ShowAddTask: false
     }
   },
   created() {
@@ -40,6 +41,12 @@ export default {
     ]
   },
   methods: {
+    toggleAddTask(){
+      this.ShowAddTask = !this.ShowAddTask
+    },
+    addTask(task){
+      this.tasks = [...this.tasks, task]
+    },
     deleteTask(id){
       this.tasks = this.tasks.filter((task) => (
         task.id !== id
@@ -57,8 +64,10 @@ export default {
 
 <template>
     <div class="container">
-      <Header title="Task App"/>
-      <AddTask/>
+      <Header title="Task App" v-on:toggle-add-task="toggleAddTask" v-bind:ShowAddTask="ShowAddTask"/>
+      <div v-if="ShowAddTask">
+        <AddTask v-on:add-task="addTask"/>
+      </div>
       <Tasks v-on:delete-task="deleteTask" v-on:toggle-reminder="toggleReminder" v-bind:tasks="tasks"/>
     </div>
 </template>

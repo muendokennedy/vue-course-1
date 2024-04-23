@@ -11,7 +11,7 @@ export default {
   },
   methods: {
     onClick(){
-      console.log('This button was clicked buddy')
+      this.$emit('btn-click')
     }
   }
 }
