@@ -2,6 +2,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 // import TheWelcome from './components/TheWelcome.vue'
 import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 import Tasks from './components/Tasks.vue'
 import AddTask from './components/AddTask.vue'
 
@@ -10,7 +11,8 @@ export default {
   components: {
     Header,
     Tasks,
-    AddTask
+    AddTask,
+    Footer
   },
   data() {
     return {
@@ -99,6 +101,7 @@ export default {
         <AddTask v-on:add-task="addTask"/>
       </div>
       <Tasks v-on:delete-task="deleteTask" v-on:toggle-reminder="toggleReminder" v-bind:tasks="tasks"/>
+      <Footer/>
     </div>
 </template>
 
