@@ -5,7 +5,7 @@
 <template>
   <footer>
     <p>Copyright &copy; 2024</p>
-    <a href="/about">About</a>
+    <router-link to="/about">About</router-link>
   </footer>
 </template>
 

@@ -16,13 +16,19 @@
       "id": "3",
       "text": "Food Shopping",
       "day": "May 7th at 12:30pm",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": "321a",
       "text": "Going to the dentist",
       "day": "June 6th 10AM",
       "reminder": true
+    },
+    {
+      "id": "a7ea",
+      "text": "jhereirj",
+      "day": "eireireire",
+      "reminder": false
     }
   ]
 }
